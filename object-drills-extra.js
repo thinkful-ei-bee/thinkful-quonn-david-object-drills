@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 const loaf = {
   flour: 300,
@@ -14,13 +14,26 @@ loaf.hydration = function() {
 
 const weirdObj = {
   foo: 42,
-  bar: 'xyz',
+  bar: "xyz",
   fum: 7,
-  quux: 'abc',
-  spam: 'spam spam spam spam spam'
+  quux: "abc",
+  spam: "spam spam spam spam spam"
 };
 
 for (const key in weirdObj) {
   // console.log(key, weirdObj[key]);
 }
 
+const newObj = {
+  meals: [
+    "breakfast",
+    "second breakfast",
+    "elevenses",
+    "lunch",
+    "afternoon tea",
+    "dinner",
+    "supper"
+  ]
+};
+
+console.log(newObj.meals[3]);
