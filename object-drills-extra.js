@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const loaf = {
   flour: 300,
@@ -14,10 +14,10 @@ loaf.hydration = function() {
 
 const weirdObj = {
   foo: 42,
-  bar: "xyz",
+  bar: 'xyz',
   fum: 7,
-  quux: "abc",
-  spam: "spam spam spam spam spam"
+  quux: 'abc',
+  spam: 'spam spam spam spam spam'
 };
 
 for (const key in weirdObj) {
@@ -26,13 +26,13 @@ for (const key in weirdObj) {
 
 const newObj = {
   meals: [
-    "breakfast",
-    "second breakfast",
-    "elevenses",
-    "lunch",
-    "afternoon tea",
-    "dinner",
-    "supper"
+    'breakfast',
+    'second breakfast',
+    'elevenses',
+    'lunch',
+    'afternoon tea',
+    'dinner',
+    'supper'
   ]
 };
 
@@ -45,19 +45,42 @@ function person(name, jobTitle) {
   };
 }
 
-const person1 = person("Peter", "Software Engineer");
-const person2 = person("Cody", "Owner");
-const person3 = person("Ralph", "Salesman");
+const person1 = person('Peter', 'Software Engineer');
+const person2 = person('Cody', 'Owner');
+const person3 = person('Ralph', 'Salesman');
 
-person1.boss = "Cody";
-person3.boss = "Cody";
+person1.boss = 'Cody';
+person3.boss = 'Cody';
 
 const personsArr = [person1, person2, person3];
 
 personsArr.forEach(ele => {
   if (ele.boss) {
-    console.log(`${ele.jobTitle} ${ele.name} reports to: ${ele.boss}`);
+    // console.log(`${ele.jobTitle} ${ele.name} reports to: ${ele.boss}`);
   } else {
-    console.log(`${ele.jobTitle} ${ele.name} does not report to anyone`);
+    // console.log(`${ele.jobTitle} ${ele.name} does not report to anyone`);
   }
 });
+
+const codeKey = {
+  a: 2,
+  b: 3,
+  c: 4,
+  d: 5
+};
+
+function decode(word) {
+  const letter = word[0];
+  return codeKey[letter] ? word[codeKey[letter] - 1] : ' ';
+}
+
+function decodeWords(words) {
+  const arr = words.split(' ');
+  const newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(decode(arr[i]));
+  }
+  return newArr.join('');
+}
+
+console.log(decodeWords('craft block argon meter bells brown croon droop'));
