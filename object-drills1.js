@@ -36,5 +36,13 @@ function personMaker(first, last) {
   };
 }
 
-const person = personMaker("q", "b");
-console.log(person.fullname());
+// const person = personMaker("q", "b");
+// console.log(person.fullname());
+
+function keyDeleter(obj) {
+  delete obj.foo;
+  delete obj.bar;
+  return obj;
+}
+
+// console.log(keyDeleter({a: 5, foo: 'abc', bar: 'def'}));
